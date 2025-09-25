@@ -1,0 +1,647 @@
+/projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:57: FutureWarning: 'DataFrame.swapaxes' is deprecated and will be removed in a future version. Please use 'DataFrame.transpose' instead.
+  return bound(*args, **kwds)
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/pyvo/dal/query.py:260 in execute_votable                                  │
+│                                                                              │
+│    257 │   │   DALQueryError                                                 │
+│    258 │   │   """                                                           │
+│    259 │   │   try:                                                          │
+│ ❱  260 │   │   │   return votableparse(self.execute_stream(post=post).read)  │
+│    261 │   │   except Exception as e:                                        │
+│    262 │   │   │   self.raise_if_error()                                     │
+│    263 │   │   │   raise DALFormatError(e, self.queryurl)                    │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ post = False                                                             │ │
+│ │ self = {                                                                 │ │
+│ │        │   'REQUEST': 'doQuery',                                         │ │
+│ │        │   'LANG': 'ADQL',                                               │ │
+│ │        │   'QUERY': 'select GaiaEDR3 as source_id, GmagCorr\n            │ │
+│ │        from "J/MNRAS/508/3877/mainca'+105033                             │ │
+│ │        }                                                                 │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/astropy/io/votable/table.py:164 in parse                                  │
+│                                                                              │
+│   161 │   with iterparser.get_xml_iterator(                                  │
+│   162 │   │   source, _debug_python_based_parser=_debug_python_based_parser  │
+│   163 │   ) as iterator:                                                     │
+│ ❱ 164 │   │   return tree.VOTableFile(config=config, pos=(1, 1)).parse(itera │
+│   165                                                                        │
+│   166                                                                        │
+│   167 def parse_single_table(source, **kwargs):                              │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ _debug_python_based_parser = False                                       │ │
+│ │                 chunk_size = 256                                         │ │
+│ │                    columns = None                                        │ │
+│ │                       conf = <astropy.io.votable.Conf object at          │ │
+│ │                              0x15225afe23c0>                             │ │
+│ │                     config = {                                           │ │
+│ │                              │   'columns': None,                        │ │
+│ │                              │   'invalid': 'exception',                 │ │
+│ │                              │   'verify': 'ignore',                     │ │
+│ │                              │   'chunk_size': 256,                      │ │
+│ │                              │   'table_number': None,                   │ │
+│ │                              │   'filename': None,                       │ │
+│ │                              │   'unit_format': None,                    │ │
+│ │                              │   'datatype_mapping': {},                 │ │
+│ │                              │   '_current_table_number': 0              │ │
+│ │                              }                                           │ │
+│ │           datatype_mapping = {}                                          │ │
+│ │                   filename = None                                        │ │
+│ │                    invalid = 'exception'                                 │ │
+│ │                   iterator = <astropy.utils.xml._iterparser.IterParser   │ │
+│ │                              object at 0x152258bd7d80>                   │ │
+│ │                     source = functools.partial(<bound method             │ │
+│ │                              HTTPResponse.read of                        │ │
+│ │                              <urllib3.response.HTTPResponse object at    │ │
+│ │                              0x15221e6b1630>>, decode_content=True)      │ │
+│ │                   table_id = None                                        │ │
+│ │               table_number = None                                        │ │
+│ │                unit_format = None                                        │ │
+│ │                     verify = 'ignore'                                    │ │
+│ │             VERIFY_OPTIONS = ['ignore', 'warn', 'exception']             │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/astropy/io/votable/tree.py:4275 in parse                                  │
+│                                                                              │
+│   4272 │   │   │   │   │                                                     │
+│   4273 │   │   │   │   │   break                                             │
+│   4274 │   │   │   │   else:                                                 │
+│ ❱ 4275 │   │   │   │   │   vo_raise(E19, (), config, pos)                    │
+│   4276 │   │   config.update(self._get_version_checks())                     │
+│   4277 │   │                                                                 │
+│   4278 │   │   tag_mapping = {                                               │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │   config = {                                                             │ │
+│ │            │   'columns': None,                                          │ │
+│ │            │   'invalid': 'exception',                                   │ │
+│ │            │   'verify': 'ignore',                                       │ │
+│ │            │   'chunk_size': 256,                                        │ │
+│ │            │   'table_number': None,                                     │ │
+│ │            │   'filename': None,                                         │ │
+│ │            │   'unit_format': None,                                      │ │
+│ │            │   'datatype_mapping': {},                                   │ │
+│ │            │   '_current_table_number': 0                                │ │
+│ │            }                                                             │ │
+│ │     data = {}                                                            │ │
+│ │ iterator = <astropy.utils.xml._iterparser.IterParser object at           │ │
+│ │            0x152258bd7d80>                                               │ │
+│ │      pos = (1, 0)                                                        │ │
+│ │     self = <VOTABLE>... 0 tables ...</VOTABLE>                           │ │
+│ │    start = True                                                          │ │
+│ │      tag = 'html'                                                        │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/astropy/io/votable/exceptions.py:124 in vo_raise                          │
+│                                                                              │
+│    121 │   """                                                               │
+│    122 │   if config is None:                                                │
+│    123 │   │   config = {}                                                   │
+│ ❱  124 │   raise exception_class(args, config, pos)                          │
+│    125                                                                       │
+│    126                                                                       │
+│    127 def vo_reraise(exc, config=None, pos=None, additional=""):            │
+│                                                                              │
+│ ╭──────────────── locals ─────────────────╮                                  │
+│ │   args = ()                             │                                  │
+│ │ config = {                              │                                  │
+│ │          │   'columns': None,           │                                  │
+│ │          │   'invalid': 'exception',    │                                  │
+│ │          │   'verify': 'ignore',        │                                  │
+│ │          │   'chunk_size': 256,         │                                  │
+│ │          │   'table_number': None,      │                                  │
+│ │          │   'filename': None,          │                                  │
+│ │          │   'unit_format': None,       │                                  │
+│ │          │   'datatype_mapping': {},    │                                  │
+│ │          │   '_current_table_number': 0 │                                  │
+│ │          }                              │                                  │
+│ │    pos = (1, 0)                         │                                  │
+│ ╰─────────────────────────────────────────╯                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+E19: None:1:0: E19: File does not appear to be a VOTABLE
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/ember/ember.py:183 in fitsed                                              │
+│                                                                              │
+│   180 │   gravz: str = typer.Option("", "--gravz", help="Column name for gra │
+│   181 │   gravz_error: str = typer.Option("", "--gravz-error", help="Column  │
+│   182 ):                                                                     │
+│ ❱ 183 │   run_fitsed(                                                        │
+│   184 │   │   inpath = inpath,                                               │
+│   185 │   │   outpath = outpath,                                             │
+│   186 │   │   rootpath = rootpath,                                           │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │            dec = 'DE_ICRS'                                               │ │
+│ │           gaia = False                                                   │ │
+│ │          gravz = ''                                                      │ │
+│ │    gravz_error = ''                                                      │ │
+│ │         inpath = PosixPath('/project/mesaelm/omnidwarf/GaiaDR3_white_dw… │ │
+│ │          jplus = False                                                   │ │
+│ │           mcmc = True                                                    │ │
+│ │         meanav = 'meanAV'                                                │ │
+│ │       numtasks = 256                                                     │ │
+│ │        outpath = PosixPath('/project/mesaelm/omnidwarf/chains')          │ │
+│ │      panstarrs = False                                                   │ │
+│ │       parallax = 'PlxZPCorr'                                             │ │
+│ │ parallax_error = 'e_Plx'                                                 │ │
+│ │             ra = 'RA_ICRS'                                               │ │
+│ │       rootpath = PosixPath('~/observational/grav-z/gravz-hlayer')        │ │
+│ │           sdss = False                                                   │ │
+│ │      source_id = 'GaiaEDR3'                                              │ │
+│ │      synthetic = True                                                    │ │
+│ │        xpphoto = True                                                    │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/ember/fitsed.py:105 in run_fitsed                                         │
+│                                                                              │
+│   102 │                                                                      │
+│   103 │   fittype = 'mcmc' if mcmc else 'leastsq'                            │
+│   104 │   print(fittype)                                                     │
+│ ❱ 105 │   fluxdf_sdss, results_sdss = fitting.pipeline(                      │
+│   106 │   │   df_segment,                                                    │
+│   107 │   │   selected_systems,                                              │
+│   108 │   │   photofunc,                                                     │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │   bands_selected = {                                                     │ │
+│ │                    │   'gaia': False,                                    │ │
+│ │                    │   'sdss': False,                                    │ │
+│ │                    │   'jplus': False,                                   │ │
+│ │                    │   'synthetic': True,                                │ │
+│ │                    │   'panstarrs': False                                │ │
+│ │                    }                                                     │ │
+│ │              dec = 'DE_ICRS'                                             │ │
+│ │       df_segment = │   │    recno                    WDJname  ...        │ │
+│ │                    _DE.icrs  PlxZPCorr                                   │ │
+│ │                    115033  980785  b'WDJ190530.79-245957.95'  ...        │ │
+│ │                    -24.999432   1.756331                                 │ │
+│ │                    115034  980786  b'WDJ190530.82+365727.99'  ...        │ │
+│ │                    36.957776   1.893772                                  │ │
+│ │                    115035  980787  b'WDJ190530.82-192047.61'  ...        │ │
+│ │                    -19.346558   1.198935                                 │ │
+│ │                    115036  980788  b'WDJ190530.87-424055.27'  ...        │ │
+│ │                    -42.682018   1.372163                                 │ │
+│ │                    115037  980789  b'WDJ190530.88+191158.10'  ...        │ │
+│ │                    19.199472   1.087489                                  │ │
+│ │                    ...        ...                        ...  ...        │ │
+│ │                    ...        ...                                        │ │
+│ │                    120029  985781  b'WDJ190739.96-195706.61'  ...        │ │
+│ │                    -19.951837   0.639670                                 │ │
+│ │                    120030  985782  b'WDJ190739.98-573437.29'  ...        │ │
+│ │                    -57.577026   0.918791                                 │ │
+│ │                    120031  985783  b'WDJ190740.06-464836.57'  ...        │ │
+│ │                    -46.810159   1.141037                                 │ │
+│ │                    120032  985784  b'WDJ190740.07-422129.11'  ...        │ │
+│ │                    -42.358091   1.416276                                 │ │
+│ │                    120033  985785  b'WDJ190740.08-392638.61'  ...        │ │
+│ │                    -39.444057   0.939579                                 │ │
+│ │                                                                          │ │
+│ │                    [5001 rows x 159 columns]                             │ │
+│ │          fittype = 'mcmc'                                                │ │
+│ │             gaia = False                                                 │ │
+│ │            gravz = ''                                                    │ │
+│ │      gravz_error = ''                                                    │ │
+│ │           inpath = PosixPath('/project/mesaelm/omnidwarf/GaiaDR3_white_… │ │
+│ │            jplus = False                                                 │ │
+│ │    logg_function = <scipy.interpolate._interpnd.LinearNDInterpolator     │ │
+│ │                    object at 0x152255178910>                             │ │
+│ │             mcmc = True                                                  │ │
+│ │           meanav = 'meanAV'                                              │ │
+│ │            names = array([], dtype=int64)                                │ │
+│ │         numtasks = 256                                                   │ │
+│ │          outpath = PosixPath('/project/mesaelm/omnidwarf/chains')        │ │
+│ │        panstarrs = False                                                 │ │
+│ │         parallax = 'PlxZPCorr'                                           │ │
+│ │   parallax_error = 'e_Plx'                                               │ │
+│ │         prev_len = 1280266                                               │ │
+│ │               ra = 'RA_ICRS'                                             │ │
+│ │         rootpath = PosixPath('/usr3/graduate/arseneau/observational/gra… │ │
+│ │             sdss = False                                                 │ │
+│ │       sdssv_data = │   │     recno                    WDJname  ...       │ │
+│ │                    _DE.icrs  PlxZPCorr                                   │ │
+│ │                    0        865752  b'WDJ182546.09-280504.62'  ...       │ │
+│ │                    -28.084617   1.684812                                 │ │
+│ │                    1        865753  b'WDJ182546.13+185230.81'  ...       │ │
+│ │                    18.875226   1.205691                                  │ │
+│ │                    2        865754  b'WDJ182546.14-640708.50'  ...       │ │
+│ │                    -64.119027   1.453737                                 │ │
+│ │                    3        865755  b'WDJ182546.19-334714.74'  ...       │ │
+│ │                    -33.787427   2.209222                                 │ │
+│ │                    4        865756  b'WDJ182546.20-364811.14'  ...       │ │
+│ │                    -36.803094   2.377258                                 │ │
+│ │                    ...         ...                        ...  ...       │ │
+│ │                    ...        ...                                        │ │
+│ │                    1280261  865747  b'WDJ182545.98-043204.08'  ...       │ │
+│ │                    -4.534469   4.742875                                  │ │
+│ │                    1280262  865748  b'WDJ182546.05+095142.36'  ...       │ │
+│ │                    9.861766   3.219400                                   │ │
+│ │                    1280263  865749  b'WDJ182546.06-605125.07'  ...       │ │
+│ │                    -60.856963   1.583359                                 │ │
+│ │                    1280264  865750  b'WDJ182546.07-242642.05'  ...       │ │
+│ │                    -24.445014   1.235148                                 │ │
+│ │                    1280265  865751  b'WDJ182546.08+104205.38'  ...       │ │
+│ │                    10.701495   1.239633                                  │ │
+│ │                                                                          │ │
+│ │                    [1280266 rows x 159 columns]                          │ │
+│ │ selected_systems = ['synthetic']                                         │ │
+│ │        source_id = 'GaiaEDR3'                                            │ │
+│ │        synthetic = True                                                  │ │
+│ │          xpphoto = True                                                  │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/ember/mcmc/fitting.py:155 in pipeline                                     │
+│                                                                              │
+│   152 │                                                                      │
+│   153 │   use_gravz = True if (gravz is not None) and (gravz_error is not No │
+│   154 │   fkws = {'systems' : systems, 'use_gravz' : use_gravz}              │
+│ ❱ 155 │   synphot, fluxdict = _process_in_chunks(df, photometry_func, chunk_ │
+│   156 │   │   │   │   │   │   │   │   │   │      functionkws = fkws)         │
+│   157 │                                                                      │
+│   158 │   interp, _ = util.make_interpolator(util.convert_names(list(fluxdic │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │            dec = 'DE_ICRS'                                               │ │
+│ │             df = │   │    gaia_dr3_source_id          ra  ...            │ │
+│ │                  parallax_error  meanAV                                  │ │
+│ │                  115033  4074220171864356736  286.378272  ...            │ │
+│ │                  0.7023    0.49                                          │ │
+│ │                  115034  2098999656277147264  286.378399  ...            │ │
+│ │                  0.8586    0.16                                          │ │
+│ │                  115035  4085529748471665408  286.378373  ...            │ │
+│ │                  0.5036    0.56                                          │ │
+│ │                  115036  6712509210446268544  286.378589  ...            │ │
+│ │                  0.7562    0.26                                          │ │
+│ │                  115037  4517829678678126976  286.378652  ...            │ │
+│ │                  0.8879    1.28                                          │ │
+│ │                  ...                     ...         ...  ...            │ │
+│ │                  ...     ...                                             │ │
+│ │                  120029  4082481283761924992  286.916481  ...            │ │
+│ │                  0.3403    0.53                                          │ │
+│ │                  120030  6639786755470748288  286.916551  ...            │ │
+│ │                  0.5580    0.18                                          │ │
+│ │                  120031  6662646701721171072  286.916868  ...            │ │
+│ │                  0.5709    0.19                                          │ │
+│ │                  120032  6712542986070381696  286.916996  ...            │ │
+│ │                  0.4839    0.28                                          │ │
+│ │                  120033  6717599743123756160  286.916980  ...            │ │
+│ │                  0.4328    0.42                                          │ │
+│ │                                                                          │ │
+│ │                  [5001 rows x 6 columns]                                 │ │
+│ │           fkws = {'systems': ['synthetic'], 'use_gravz': False}          │ │
+│ │          gravz = None                                                    │ │
+│ │    gravz_error = None                                                    │ │
+│ │  logg_function = <scipy.interpolate._interpnd.LinearNDInterpolator       │ │
+│ │                  object at 0x152255178910>                               │ │
+│ │         meanAV = 'meanAV'                                                │ │
+│ │           mode = 'mcmc'                                                  │ │
+│ │        outfile = PosixPath('/project/mesaelm/omnidwarf/chains')          │ │
+│ │       parallax = 'PlxZPCorr'                                             │ │
+│ │ parallax_error = 'e_Plx'                                                 │ │
+│ │             ra = 'RA_ICRS'                                               │ │
+│ │      source_id = 'GaiaEDR3'                                              │ │
+│ │        systems = ['synthetic']                                           │ │
+│ │      use_gravz = False                                                   │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/ember/mcmc/fitting.py:117 in _process_in_chunks                           │
+│                                                                              │
+│   114 │   │   for start in range(0, n, chunk_size):                          │
+│   115 │   │   │   stop = min(start + chunk_size, n)                          │
+│   116 │   │   │   chunk = df.iloc[start:stop]                                │
+│ ❱ 117 │   │   │   synphot, fluxdict = function(chunk, **functionkws)         │
+│   118 │   │   │   all_synphot.append(synphot)                                │
+│   119 │   │   │   all_fluxdict.append(fluxdict)                              │
+│   120 │   return pd.concat(all_synphot), all_fluxdict[0]                     │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ all_fluxdict = []                                                        │ │
+│ │  all_synphot = []                                                        │ │
+│ │        chunk = │   │    gaia_dr3_source_id          ra  ...              │ │
+│ │                parallax_error  meanAV                                    │ │
+│ │                115033  4074220171864356736  286.378272  ...              │ │
+│ │                0.7023    0.49                                            │ │
+│ │                115034  2098999656277147264  286.378399  ...              │ │
+│ │                0.8586    0.16                                            │ │
+│ │                115035  4085529748471665408  286.378373  ...              │ │
+│ │                0.5036    0.56                                            │ │
+│ │                115036  6712509210446268544  286.378589  ...              │ │
+│ │                0.7562    0.26                                            │ │
+│ │                115037  4517829678678126976  286.378652  ...              │ │
+│ │                0.8879    1.28                                            │ │
+│ │                ...                     ...         ...  ...              │ │
+│ │                ...     ...                                               │ │
+│ │                120028  6661391025084190592  286.916463  ...              │ │
+│ │                0.0798    0.02                                            │ │
+│ │                120029  4082481283761924992  286.916481  ...              │ │
+│ │                0.3403    0.53                                            │ │
+│ │                120030  6639786755470748288  286.916551  ...              │ │
+│ │                0.5580    0.18                                            │ │
+│ │                120031  6662646701721171072  286.916868  ...              │ │
+│ │                0.5709    0.19                                            │ │
+│ │                120032  6712542986070381696  286.916996  ...              │ │
+│ │                0.4839    0.28                                            │ │
+│ │                                                                          │ │
+│ │                [5000 rows x 6 columns]                                   │ │
+│ │   chunk_size = 5000                                                      │ │
+│ │           df = │   │    gaia_dr3_source_id          ra  ...              │ │
+│ │                parallax_error  meanAV                                    │ │
+│ │                115033  4074220171864356736  286.378272  ...              │ │
+│ │                0.7023    0.49                                            │ │
+│ │                115034  2098999656277147264  286.378399  ...              │ │
+│ │                0.8586    0.16                                            │ │
+│ │                115035  4085529748471665408  286.378373  ...              │ │
+│ │                0.5036    0.56                                            │ │
+│ │                115036  6712509210446268544  286.378589  ...              │ │
+│ │                0.7562    0.26                                            │ │
+│ │                115037  4517829678678126976  286.378652  ...              │ │
+│ │                0.8879    1.28                                            │ │
+│ │                ...                     ...         ...  ...              │ │
+│ │                ...     ...                                               │ │
+│ │                120029  4082481283761924992  286.916481  ...              │ │
+│ │                0.3403    0.53                                            │ │
+│ │                120030  6639786755470748288  286.916551  ...              │ │
+│ │                0.5580    0.18                                            │ │
+│ │                120031  6662646701721171072  286.916868  ...              │ │
+│ │                0.5709    0.19                                            │ │
+│ │                120032  6712542986070381696  286.916996  ...              │ │
+│ │                0.4839    0.28                                            │ │
+│ │                120033  6717599743123756160  286.916980  ...              │ │
+│ │                0.4328    0.42                                            │ │
+│ │                                                                          │ │
+│ │                [5001 rows x 6 columns]                                   │ │
+│ │  functionkws = {'systems': ['synthetic'], 'use_gravz': False}            │ │
+│ │            n = 5001                                                      │ │
+│ │        start = 0                                                         │ │
+│ │         stop = 5000                                                      │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/ember/mcmc/xpspec.py:113 in process_dataframe                             │
+│                                                                              │
+│   110 │   df = util.check_valid(df, use_gravz)                               │
+│   111 │   # fetch xp photometry                                              │
+│   112 │   source_ids = df['gaia_dr3_source_id'].values.astype(int).tolist()  │
+│ ❱ 113 │   synphot, _, _ = _make_xpphotometry(source_ids, systems=phot_system │
+│   114 │   # fix the Gaia photometry                                          │
+│   115 │   #synphot = _convert_gaia_flux(synphot) if 'gaia' in systems else _ │
+│   116 │   flux_dict = util.find_photocols(synphot)                           │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │              df = │   │    gaia_dr3_source_id          ra  ...           │ │
+│ │                   parallax_error  meanAV                                 │ │
+│ │                   115033  4074220171864356736  286.378272  ...           │ │
+│ │                   0.7023    0.49                                         │ │
+│ │                   115034  2098999656277147264  286.378399  ...           │ │
+│ │                   0.8586    0.16                                         │ │
+│ │                   115035  4085529748471665408  286.378373  ...           │ │
+│ │                   0.5036    0.56                                         │ │
+│ │                   115036  6712509210446268544  286.378589  ...           │ │
+│ │                   0.7562    0.26                                         │ │
+│ │                   115037  4517829678678126976  286.378652  ...           │ │
+│ │                   0.8879    1.28                                         │ │
+│ │                   ...                     ...         ...  ...           │ │
+│ │                   ...     ...                                            │ │
+│ │                   120028  6661391025084190592  286.916463  ...           │ │
+│ │                   0.0798    0.02                                         │ │
+│ │                   120029  4082481283761924992  286.916481  ...           │ │
+│ │                   0.3403    0.53                                         │ │
+│ │                   120030  6639786755470748288  286.916551  ...           │ │
+│ │                   0.5580    0.18                                         │ │
+│ │                   120031  6662646701721171072  286.916868  ...           │ │
+│ │                   0.5709    0.19                                         │ │
+│ │                   120032  6712542986070381696  286.916996  ...           │ │
+│ │                   0.4839    0.28                                         │ │
+│ │                                                                          │ │
+│ │                   [5000 rows x 6 columns]                                │ │
+│ │              ff = {                                                      │ │
+│ │                   │   'Gaia_G': <interpolator.atmos.sed.Filter object at │ │
+│ │                   0x15225d250980>,                                       │ │
+│ │                   │   'Gaia_BP': <interpolator.atmos.sed.Filter object   │ │
+│ │                   at 0x152258bd1d10>,                                    │ │
+│ │                   │   'Gaia_RP': <interpolator.atmos.sed.Filter object   │ │
+│ │                   at 0x152258bd2350>,                                    │ │
+│ │                   │   'SDSS_u': <interpolator.atmos.sed.Filter object at │ │
+│ │                   0x152258b7de00>,                                       │ │
+│ │                   │   'SDSS_g': <interpolator.atmos.sed.Filter object at │ │
+│ │                   0x152258b7e060>,                                       │ │
+│ │                   │   'SDSS_r': <interpolator.atmos.sed.Filter object at │ │
+│ │                   0x15221e6885f0>,                                       │ │
+│ │                   │   'SDSS_i': <interpolator.atmos.sed.Filter object at │ │
+│ │                   0x152258b83130>,                                       │ │
+│ │                   │   'SDSS_z': <interpolator.atmos.sed.Filter object at │ │
+│ │                   0x152258b83bd0>,                                       │ │
+│ │                   │   'PS1_g': <interpolator.atmos.sed.Filter object at  │ │
+│ │                   0x1522550f3950>,                                       │ │
+│ │                   │   'PS1_r': <interpolator.atmos.sed.Filter object at  │ │
+│ │                   0x1522550f2e50>,                                       │ │
+│ │                   │   ... +46                                            │ │
+│ │                   }                                                      │ │
+│ │     phot_system = array(['SYNTH_1', 'SYNTH_2', 'SYNTH_3', 'SYNTH_4',     │ │
+│ │                   'SYNTH_5', 'SYNTH_6',                                  │ │
+│ │                   │      'SYNTH_7', 'SYNTH_8', 'SYNTH_9', 'SYNTH_10',    │ │
+│ │                   'SYNTH_11',                                            │ │
+│ │                   │      'SYNTH_12', 'SYNTH_13', 'SYNTH_14', 'SYNTH_15', │ │
+│ │                   'SYNTH_16',                                            │ │
+│ │                   │      'SYNTH_17', 'SYNTH_18', 'SYNTH_19', 'SYNTH_20', │ │
+│ │                   'SYNTH_21',                                            │ │
+│ │                   │      'SYNTH_22', 'SYNTH_23', 'SYNTH_24'],            │ │
+│ │                   dtype='<U8')                                           │ │
+│ │ photometry_dict = {                                                      │ │
+│ │                   │   'gaia': ['Gaia_G', 'Gaia_BP', 'Gaia_RP'],          │ │
+│ │                   │   'sdss': [                                          │ │
+│ │                   │   │   'SDSS_u',                                      │ │
+│ │                   │   │   'SDSS_g',                                      │ │
+│ │                   │   │   'SDSS_r',                                      │ │
+│ │                   │   │   'SDSS_i',                                      │ │
+│ │                   │   │   'SDSS_z'                                       │ │
+│ │                   │   ],                                                 │ │
+│ │                   │   'panstarrs': [                                     │ │
+│ │                   │   │   'PS1_g',                                       │ │
+│ │                   │   │   'PS1_r',                                       │ │
+│ │                   │   │   'PS1_i',                                       │ │
+│ │                   │   │   'PS1_z',                                       │ │
+│ │                   │   │   'PS1_y'                                        │ │
+│ │                   │   ],                                                 │ │
+│ │                   │   'jplus': [                                         │ │
+│ │                   │   │   'JPLUS_J0378',                                 │ │
+│ │                   │   │   'JPLUS_J0395',                                 │ │
+│ │                   │   │   'JPLUS_J0410',                                 │ │
+│ │                   │   │   'JPLUS_J0430',                                 │ │
+│ │                   │   │   'JPLUS_J0515',                                 │ │
+│ │                   │   │   'JPLUS_J0660',                                 │ │
+│ │                   │   │   'JPLUS_J0861'                                  │ │
+│ │                   │   ],                                                 │ │
+│ │                   │   'synthetic': [                                     │ │
+│ │                   │   │   'SYNTH_1',                                     │ │
+│ │                   │   │   'SYNTH_2',                                     │ │
+│ │                   │   │   'SYNTH_3',                                     │ │
+│ │                   │   │   'SYNTH_4',                                     │ │
+│ │                   │   │   'SYNTH_5',                                     │ │
+│ │                   │   │   'SYNTH_6',                                     │ │
+│ │                   │   │   'SYNTH_7',                                     │ │
+│ │                   │   │   'SYNTH_8',                                     │ │
+│ │                   │   │   'SYNTH_9',                                     │ │
+│ │                   │   │   'SYNTH_10',                                    │ │
+│ │                   │   │   ... +14                                        │ │
+│ │                   │   ]                                                  │ │
+│ │                   }                                                      │ │
+│ │      source_ids = [                                                      │ │
+│ │                   │   4074220171864356736,                               │ │
+│ │                   │   2098999656277147264,                               │ │
+│ │                   │   4085529748471665408,                               │ │
+│ │                   │   6712509210446268544,                               │ │
+│ │                   │   4517829678678126976,                               │ │
+│ │                   │   4101285750089881088,                               │ │
+│ │                   │   4080610116827529856,                               │ │
+│ │                   │   6764178805181188480,                               │ │
+│ │                   │   6756733457899657088,                               │ │
+│ │                   │   4513885631666461696,                               │ │
+│ │                   │   ... +4990                                          │ │
+│ │                   ]                                                      │ │
+│ │         systems = ['synthetic']                                          │ │
+│ │       use_gravz = False                                                  │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/ember/mcmc/xpspec.py:27 in _make_xpphotometry                             │
+│                                                                              │
+│    24 │   QUERY = f"""select GaiaEDR3 as source_id, GmagCorr                 │
+│    25 │   │   │   from \"J/MNRAS/508/3877/maincat\"                          │
+│    26 │   │   │   where GaiaEDR3 in {tuple(source_ids)}"""                   │
+│ ❱  27 │   ngfdata = tap_service.search(QUERY).to_table().to_pandas()         │
+│    28 │   _, sed = util.make_interpolator(systems, units='fnu')              │
+│    29 │                                                                      │
+│    30 │   original, sampling = calibrate(source_ids, save_file=False, trunca │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │       QUERY = 'select GaiaEDR3 as source_id, GmagCorr\n            from  │ │
+│ │               "J/MNRAS/508/3877/mainca'+105033                           │ │
+│ │  source_ids = [                                                          │ │
+│ │               │   4074220171864356736,                                   │ │
+│ │               │   2098999656277147264,                                   │ │
+│ │               │   4085529748471665408,                                   │ │
+│ │               │   6712509210446268544,                                   │ │
+│ │               │   4517829678678126976,                                   │ │
+│ │               │   4101285750089881088,                                   │ │
+│ │               │   4080610116827529856,                                   │ │
+│ │               │   6764178805181188480,                                   │ │
+│ │               │   6756733457899657088,                                   │ │
+│ │               │   4513885631666461696,                                   │ │
+│ │               │   ... +4990                                              │ │
+│ │               ]                                                          │ │
+│ │     systems = array(['SYNTH_1', 'SYNTH_2', 'SYNTH_3', 'SYNTH_4',         │ │
+│ │               'SYNTH_5', 'SYNTH_6',                                      │ │
+│ │               │      'SYNTH_7', 'SYNTH_8', 'SYNTH_9', 'SYNTH_10',        │ │
+│ │               'SYNTH_11',                                                │ │
+│ │               │      'SYNTH_12', 'SYNTH_13', 'SYNTH_14', 'SYNTH_15',     │ │
+│ │               'SYNTH_16',                                                │ │
+│ │               │      'SYNTH_17', 'SYNTH_18', 'SYNTH_19', 'SYNTH_20',     │ │
+│ │               'SYNTH_21',                                                │ │
+│ │               │      'SYNTH_22', 'SYNTH_23', 'SYNTH_24'], dtype='<U8')   │ │
+│ │ tap_service = TAPService(baseurl :                                       │ │
+│ │               'http://TAPVizieR.u-strasbg.fr/TAPVizieR/tap/',            │ │
+│ │               description : 'None')                                      │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/pyvo/dal/tap.py:282 in run_sync                                           │
+│                                                                              │
+│    279 │   │   """                                                           │
+│    280 │   │   return self.create_query(                                     │
+│    281 │   │   │   query, language=language, maxrec=maxrec, uploads=uploads, │
+│ ❱  282 │   │   │   **keywords).execute()                                     │
+│    283 │                                                                     │
+│    284 │   # alias for service discovery                                     │
+│    285 │   search = run_sync                                                 │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ keywords = {}                                                            │ │
+│ │ language = 'ADQL'                                                        │ │
+│ │   maxrec = None                                                          │ │
+│ │    query = 'select GaiaEDR3 as source_id, GmagCorr\n            from     │ │
+│ │            "J/MNRAS/508/3877/mainca'+105033                              │ │
+│ │     self = TAPService(baseurl :                                          │ │
+│ │            'http://TAPVizieR.u-strasbg.fr/TAPVizieR/tap/', description : │ │
+│ │            'None')                                                       │ │
+│ │  uploads = None                                                          │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/pyvo/dal/tap.py:1121 in execute                                           │
+│                                                                              │
+│   1118 │   │   DALFormatError                                                │
+│   1119 │   │      for errors parsing the VOTable response                    │
+│   1120 │   │   """                                                           │
+│ ❱ 1121 │   │   return TAPResults(self.execute_votable(), url=self.queryurl,  │
+│   1122 │                                                                     │
+│   1123 │   def submit(self, *, post=False):                                  │
+│   1124 │   │   """                                                           │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ self = {                                                                 │ │
+│ │        │   'REQUEST': 'doQuery',                                         │ │
+│ │        │   'LANG': 'ADQL',                                               │ │
+│ │        │   'QUERY': 'select GaiaEDR3 as source_id, GmagCorr\n            │ │
+│ │        from "J/MNRAS/508/3877/mainca'+105033                             │ │
+│ │        }                                                                 │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/pyvo/dal/query.py:262 in execute_votable                                  │
+│                                                                              │
+│    259 │   │   try:                                                          │
+│    260 │   │   │   return votableparse(self.execute_stream(post=post).read)  │
+│    261 │   │   except Exception as e:                                        │
+│ ❱  262 │   │   │   self.raise_if_error()                                     │
+│    263 │   │   │   raise DALFormatError(e, self.queryurl)                    │
+│    264 │                                                                     │
+│    265 │   def raise_if_error(self):                                         │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ post = False                                                             │ │
+│ │ self = {                                                                 │ │
+│ │        │   'REQUEST': 'doQuery',                                         │ │
+│ │        │   'LANG': 'ADQL',                                               │ │
+│ │        │   'QUERY': 'select GaiaEDR3 as source_id, GmagCorr\n            │ │
+│ │        from "J/MNRAS/508/3877/mainca'+105033                             │ │
+│ │        }                                                                 │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packag │
+│ es/pyvo/dal/query.py:271 in raise_if_error                                   │
+│                                                                              │
+│    268 │   │   """                                                           │
+│    269 │   │   if self._ex:                                                  │
+│    270 │   │   │   e = self._ex                                              │
+│ ❱  271 │   │   │   raise DALServiceError.from_except(e, self.queryurl)       │
+│    272 │                                                                     │
+│    273 │   @property                                                         │
+│    274 │   def queryurl(self):                                               │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │    e = HTTPError('504 Server Error: Gateway Time-out for url:            │ │
+│ │        http://tapvizier.u-strasbg.fr/TAPVizieR/tap//sync')               │ │
+│ │ self = {                                                                 │ │
+│ │        │   'REQUEST': 'doQuery',                                         │ │
+│ │        │   'LANG': 'ADQL',                                               │ │
+│ │        │   'QUERY': 'select GaiaEDR3 as source_id, GmagCorr\n            │ │
+│ │        from "J/MNRAS/508/3877/mainca'+105033                             │ │
+│ │        }                                                                 │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+╰──────────────────────────────────────────────────────────────────────────────╯
+DALServiceError: 504 Server Error: Gateway Time-out for url: 
+http://tapvizier.u-strasbg.fr/TAPVizieR/tap//sync
