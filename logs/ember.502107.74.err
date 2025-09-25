@@ -1,0 +1,2 @@
+/projectnb/mesaelm/arseneau/.conda/envs/structure/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:57: FutureWarning: 'DataFrame.swapaxes' is deprecated and will be removed in a future version. Please use 'DataFrame.transpose' instead.
+  return bound(*args, **kwds)

@@ -1,0 +1,9 @@
+Host: scc-h30
+Job:  ember  ID: 502107  Task: 199
+Cmd:  ember fit-sed /project/mesaelm/omnidwarf/GaiaDR3_white_dwarfs.pqt /project/mesaelm/omnidwarf/chains/ --xpphoto --synthetic --mcmc --source-id GaiaEDR3 --ra RA_ICRS --dec DE_ICRS --parallax PlxZPCorr --parallax-error e_Plx --meanav meanAV --numtasks 2048
+['synthetic']
+Total rows before filtering: 1280266
+Rows remaining after removing existing chains: 1279259
+Rows in this SGE task segment: 625
+Bands selected: synthetic
+Output directory: /project/mesaelm/omnidwarf/chains
